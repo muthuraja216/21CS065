@@ -1,0 +1,22 @@
+button{
+    height: 30px;
+    width:100px;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 350px;
+    width: 100%;
+}
+.calc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100px;
+}
+.option{
+    height: 50px;
+    margin-top: 20px;
+    
+}

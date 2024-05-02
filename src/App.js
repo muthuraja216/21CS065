@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-
+import React from 'react';
+import './index.css'
+import { Admin } from './component/Admin';
+import { Login } from './component/Login';
+import { Auth } from './component/Auth';
+import { Protected } from './component/Protected';
+import { Nomatch } from './component/Nomatch';
+import { Home } from './component/Home';
+import { Signup } from './component/Signup';
+import { Navbar } from './component/Navbar';
+import { Profile } from './component/Profile';
+import { Users } from './component/Users';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <Auth>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+
+        <Route path='/*' element={<Nomatch/>}/>        
+        <Route path='/Users' element={<Users/>}/>
+
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/admin' element={<Protected><Admin/></Protected>}/>
+        <Route path='/profile' element={<Protected><Profile/></Protected>}/>
+      
+
+        <Route path='/signup' element={<Signup/>}/>
+
+      </Routes>
+      </Auth>
+
+    
     </div>
   );
 }
